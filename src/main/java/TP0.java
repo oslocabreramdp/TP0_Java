@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Scanner;
 
 public class TP0 {
@@ -282,18 +283,108 @@ public class TP0 {
                     break;
 
                 case 15:
-                    System.out.println("Commit de prueba");
+                    int num15, posicionImpar;
+
+                    do{
+                        System.out.println("Ingrese un numero entero de 5 cifras");
+                        num15=input.nextInt();
+                    }while(Math.abs(num15)>99999 || Math.abs(num15)<10000);
+
+                    for (int i=1; i<6; i++)
+                {
+                    posicionImpar=num15%10;
+                    num15=num15/10;
+                            if(i%2==1)
+                            {
+                                System.out.println("La cifra posicion " + i + " es " +posicionImpar);
+                            }
+                };
+
                     break;
 
                 case 16:
+
+                    int hora, minutos, segundos;
+
+                    System.out.println("Ingrese un valor para horas: ");
+                    hora=input.nextInt();
+                    System.out.println("Ingrese un valor para minutos: ");
+                    minutos=input.nextInt();
+                    System.out.println("Ingrese un valor para segundos: ");
+                    segundos=input.nextInt();
+
+                    if(hora>=0 && hora<24 && minutos>=0 && minutos<60 && segundos>=0 && segundos<60)
+                    {
+                        System.out.println("La hora "+hora+"hs "+minutos+"min "+segundos+"seg es valida");
+                    }else{
+                        System.out.println("La hora cargada es invalida");
+                    }
 
                     break;
 
                 case 17:
 
+                    int edad;
+                    String nombre17;
+                    double salario;
+
+                    System.out.println("Ingrese la edad del persona: ");
+                    edad=input.nextInt();
+                    input.nextLine();
+                    System.out.println("Ingrese el nombre de el/la persona:");
+                    nombre17=input.nextLine();
+                    System.out.println("Ingrese el salario:");
+                    salario=input.nextDouble();
+
+                    if(edad<=16)
+                    {
+                        System.out.println(nombre17+" no tiene edad para trabajar.");
+                    }else {
+                        System.out.println(nombre17 + " tiene edad para trabajar.");
+
+                        if (edad >= 19 && edad <= 50) {
+                            System.out.println(nombre17+ " tiene una bonificacion del 5% cobrando:" + (salario * 1.05))
+                            ;
+                        }else if(edad>=51 && edad<=60){
+                            System.out.println(nombre17+" tiene una bonificacion del 10% sobre el salario cobrando: " + (salario*1.1));
+
+                        }else if (edad>60){
+                            System.out.println(nombre17+" tiene una bonificacion del 15% sobre el salario cobrando: " +(salario*1.15));
+                        }else{
+                            System.out.println(nombre17+" cobra " +salario);
+                        }
+                    }
+
+
                     break;
 
                 case 18:
+
+                    double peso, altura, imc;
+
+                    System.out.println("Calcularemos el Indice de Masa Corporal");
+                    System.out.println("Por favor ingrese su peso: ");
+                    peso=input.nextDouble();
+                    System.out.println("Ingrese su altura: ");
+                    altura=input.nextDouble();
+
+                    imc=peso/Math.pow(altura,2);
+
+                    if(imc<18.5){
+                    System.out.println("Su IMC indica bajo peso");
+                }else if(imc<25){
+                        System.out.println("Su IMC indica un peso saludable");
+                }else if(imc<30) {
+                    System.out.println("Su IMC indica Sobrepeso");
+                }else if (imc<35){
+                        System.out.println("Su IMC indica Obesidad grado 1");
+
+                }else if(imc<40)
+                {
+                    System.out.println("Su IMC indica Obesidad grado 2");
+                }else{
+                        System.out.println("Su IMC indica obesidad grado 3");
+                }
 
                     break;
 
@@ -302,6 +393,21 @@ public class TP0 {
                     break;
 
                 case 20:
+
+                    int sumagauss=0;
+                    int aux20;
+
+                    do {
+                        System.out.println("Ingrese un nuemero entero positivo");
+                        aux20=input.nextInt();
+                    }while (aux20<=0);
+
+                    for(int contador=1;contador<=aux20;contador++ )
+                    {
+                        sumagauss=sumagauss+contador;
+                    }
+
+                    System.out.println("La suma consecutiva de los primeros "+aux20+" numeros es = " +sumagauss);
 
                     break;
 
